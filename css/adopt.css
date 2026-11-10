@@ -1,0 +1,212 @@
+/* adopt.css — only the extras needed for adopt.php.
+   Everything else (top bar, navbar, hero, cards, form) comes from homepage.css */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Active nav link */
+.nav-item a.active {
+    color: #0d9488;
+}
+
+/* "Hi, username" next to the Log Out button */
+.welcome-user {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+/* ---------- SEARCH + CATEGORY TABS ---------- */
+.adopt-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    max-width: 720px;
+}
+
+.adopt-search input[type="text"] {
+    flex: 1;
+    padding: 11px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.adopt-search input[type="text"]:focus {
+    border-color: #0d9488;
+}
+
+/* Search button reuses .form-submit-btn but without the top margin */
+.adopt-search .form-submit-btn {
+    margin-top: 0;
+    padding: 11px 24px;
+}
+
+.adopt-clear {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.adopt-clear:hover {
+    color: #0d9488;
+    text-decoration: underline;
+}
+
+.adopt-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.adopt-tab {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #475569;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.adopt-tab:hover {
+    border-color: #0d9488;
+    color: #0d9488;
+}
+
+.adopt-tab.active {
+    background-color: #0d9488;
+    border-color: #0d9488;
+    color: #ffffff;
+}
+
+/* ---------- PET GRID ---------- */
+.adopt-count {
+    font-size: 16px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.adopt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* In the grid, cards fill their column instead of the fixed 220px slider width */
+.adopt-grid .pet-card {
+    min-width: 0;
+    max-width: none;
+}
+
+.adopt-grid .pet-card-img {
+    height: 180px;
+}
+
+.adopt-img-wrap {
+    position: relative;
+}
+
+.adopt-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(15, 23, 42, 0.85);
+    color: #2dd4bf;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* "Pet Details" is a link here, so make it look like the homepage button */
+a.pet-card-btn {
+    display: block;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+a.pet-card-btn:hover {
+    background-color: #0d9488;
+    color: #ffffff;
+}
+
+/* Empty / error state */
+.adopt-empty {
+    background-color: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+.adopt-empty strong {
+    color: #0f172a;
+    font-size: 16px;
+}
+
+/* ---------- HOW ADOPTION WORKS ---------- */
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0fdfa;
+    color: #0d9488;
+    border: 1px solid #ccfbf1;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+/* ---------- REHOME CTA ---------- */
+.adopt-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.adopt-cta-btn {
+    display: inline-block;
+    margin-top: 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 640px) {
+    .adopt-search {
+        flex-wrap: wrap;
+    }
+
+    .adopt-search input[type="text"] {
+        flex: 1 1 100%;
+    }
+
+    .adopt-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 14px;
+    }
+
+    .adopt-grid .pet-card-img {
+        height: 140px;
+    }
+}

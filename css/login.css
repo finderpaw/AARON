@@ -1,0 +1,250 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #0f172a;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.6)),
+                        url('image/animal5.jpg') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(2px);
+            z-index: -1;
+        }
+
+        .login-card {
+            display: flex;
+            width: 100%;
+            max-width: 850px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Left Sidebar */
+        .sidebar-left {
+            width: 35%;
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-text h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .welcome-text p {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .sidebar-img-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .sidebar-img-container img {
+            width: 100%;
+            max-width: 160px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .register-link {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .register-link a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .register-link a:hover {
+            color: #cbd5e1;
+        }
+
+        /* Right Form Area */
+        .form-right {
+            width: 65%;
+            padding: 2.5rem;
+            background-color: #fdfbfb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-right h2 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-right > p {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #475569;
+            font-size: 0.8rem;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            background-color: #ffffff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus {
+            border-color: #1e293b;
+            box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
+            outline: none;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.8rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #475569;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .forgot-password {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+            color: #0f172a;
+        }
+
+        .btn-submit {
+            background-color: #1e293b;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.1s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0f172a;
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+        
+
+.btn-logout:hover {
+    background-color: #b91c1c;
+}
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-card {
+                flex-direction: column;
+                max-width: 450px;
+            }
+
+            .sidebar-left,
+            .form-right {
+                width: 100%;
+            }
+
+            .sidebar-left {
+                padding: 2rem;
+            }
+
+            .sidebar-img-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .form-right,
+            .sidebar-left {
+                padding: 1.5rem;
+            }
+
+            .form-options {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: flex-start;
+            }
+        }
+        .error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin: 10px 0;
+}
